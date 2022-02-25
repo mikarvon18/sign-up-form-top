@@ -1,6 +1,32 @@
-img {
-    width: 50vh;
+@font-face {
+    font-family: norseFont;
+    src: url(Norse-Bold.otf);
+}
+
+body {
+    font-size: large;
+}
+
+img,
+.logo-text {
+    width: 30vw;
     height: 100vh;
+    position: absolute;
+
+    left: 20vw;
+}
+img {
+    z-index: -1;
+}
+.logo-text {
+    background-color: rgba(0,0,0,0.3);
+    height: 100px;
+    line-height: 100px;
+    top: 30vh;
+    font-family: norseFont;
+    text-align: center;
+    font-size: 80px;
+    color: white;
 }
 
 label {
@@ -8,15 +34,20 @@ label {
 }
 
 :root {
-    --info-panel: 50vh;
+    --info-panel: 500px;
 }
 
 .container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 50px;
+    position: absolute;
+    background-color: white;
+    justify-content: center;
+    width: var(--info-panel);
+    left: 50vw;
+    top: 40vh;
+    padding-left: 40px;
 }
 .info-panel {
     display: flex;
@@ -30,9 +61,13 @@ form {
     flex-direction: row;
     flex-wrap: wrap;
     width: var(--info-panel);
-    height: min(150px, 200px);
+    height: 180px;
     align-items: center;
     overflow: hidden;
+    align-content: space-between;
+    gap: 10px 20px;
+    box-shadow: 0px 5px 5px lightgray;
+    padding: 40px;
 
 }
 
@@ -50,4 +85,40 @@ li {
     align-items: baseline;
     width: var(--info-panel);
 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(131, 186, 202);
+    box-shadow: 1px 1px 5px rgb(131, 186, 202);
+}
+
+label {
+    text-transform: uppercase;
+}
+
+input {
+    border: 2px solid rgb(209, 204, 204);
+    border-radius: 4px;
+
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px rgb(131, 186, 202);
+}
+
+button {
+    background-color: #96929F;
+    width: 200px;
+    height: 50px;
+    font-family: norseFont;
+    font-size: 30px;
+    border-width: 0px;
+    border-radius: 4px;
+    border-style: solid;
+    outline: none;
 }
